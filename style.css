@@ -1,6 +1,10 @@
+body {
+    font-family: sans-serif;
+}
+
 header {
     background-color: navy;
-    padding: 10px;
+    padding: 20px;
 }
 
 header a {
@@ -9,9 +13,9 @@ header a {
     font-size: 20px;
     text-decoration: none;
     border: 1px solid white;
-    border-radius: 10px;
+    border-radius: 10px;a
     padding: 5px;
-    margin: 10px;
+    margin: 30px;
 }
 
 header img {
@@ -19,15 +23,21 @@ header img {
     height: 60px;
 }
 
+.sp_button {
+    background-color: #2adede;
+    border: 1px solid #2adede;
+}
+
 h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
 }
 
 h2 {
     background-color: #2adede;
     color: blueviolet;
     font-size: 30px;
+    padding: 10px;
 }
 
 main p {
@@ -43,6 +53,11 @@ p img {
     width: 200px;
 }
 
+.nb_news {
+    background-color: navy;
+    color: white;
+}
+
 footer {
     background-color: #8fddf2;
     padding: 10px;
@@ -50,6 +65,15 @@ footer {
 
 footer p {
     background-color: white;
-    color: black;
     padding: 5px;
+}
+
+main h1 {
+    font-weight: normal;
+    border-bottom: 2px solid navy;
+    padding-bottom: 5px;
+}
+
+.text {
+    text-align: justify;
 }
