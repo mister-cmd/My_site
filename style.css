@@ -1,79 +1,58 @@
-body {
-    font-family: sans-serif;
+main a {
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 header {
-    background-color: navy;
-    padding: 20px;
+    border: solid rgb(51, 51, 247) 3px;
+    border-radius: 10px;
+    color: darkblue;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
 }
 
 header a {
-    color: black;
-    background-color: white;
-    font-size: 20px;
+    border: solid rgb(41, 41, 190) 3px;
+    color: white;
+    background-color: rgb(41, 41, 190);
     text-decoration: none;
-    border: 1px solid white;
-    border-radius: 10px;a
-    padding: 5px;
-    margin: 30px;
-}
-
-header img {
-    width: 200px;
-    height: 60px;
-}
-
-.sp_button {
-    background-color: #2adede;
-    border: 1px solid #2adede;
+    border-radius: 7px;
+    margin-top: 400px;
 }
 
 h1 {
     text-align: center;
-    font-size: 60px;
-}
-
-h2 {
-    background-color: #2adede;
-    color: blueviolet;
-    font-size: 30px;
-    padding: 10px;
-}
-
-main p {
-    font-size: 20px;
-    padding: 20px;
-    margin: 20px;
-    border: 1px solid navy;
-    border-radius: 15px;
-}
-
-p img {
-    height: 150px;
-    width: 200px;
-}
-
-.nb_news {
-    background-color: navy;
-    color: white;
+    border: 3px solid CornflowerBlue;
+    border-radius: 8px;
+    background-color: CornflowerBlue;
+    color: rgb(68, 51, 161);
+    font-family: Cascadia Code;
 }
 
 footer {
-    background-color: #8fddf2;
-    padding: 10px;
+    background-color: rgb(41, 41, 190);
+    font-size: 20px;
+    border: solid rgb(41, 41, 190) 15px;
 }
 
-footer p {
-    background-color: white;
-    padding: 5px;
+#contacts {
+    font-family: Bahnschrift;
+    font-size: 35px;
+    border: solid rgb(73, 73, 252) 2px;
+    background-color: rgb(92, 92, 255);
 }
 
-main h1 {
-    font-weight: normal;
-    border-bottom: 2px solid navy;
-    padding-bottom: 5px;
+#adress {
+    border: solid rgb(73, 73, 252) 2px;
+    background-color: rgb(92, 92, 255);
+    font-size: 25px;
+    font-family: Cambria;
 }
 
-.text {
-    text-align: justify;
+#phone {
+    border: solid rgb(73, 73, 252) 2px;
+    background-color: rgb(92, 92, 255);
+    font-size: 25px;
+    font-family: Cambria;
 }
