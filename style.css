@@ -1,58 +1,95 @@
-main a {
-    text-decoration: none;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive;
 }
 
-header {
-    border: solid rgb(51, 51, 247) 3px;
-    border-radius: 10px;
-    color: darkblue;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
+body {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    min-height: 100vh;
+    padding: 20px;
 }
 
-header a {
-    border: solid rgb(41, 41, 190) 3px;
-    color: white;
-    background-color: rgb(41, 41, 190);
-    text-decoration: none;
-    border-radius: 7px;
-    margin-top: 400px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h1 {
     text-align: center;
-    border: 3px solid CornflowerBlue;
-    border-radius: 8px;
-    background-color: CornflowerBlue;
-    color: rgb(68, 51, 161);
-    font-family: Cascadia Code;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 30px 0;
+    font-size: 2.5em;
+    animation: title 2s infinite;
 }
 
-footer {
-    background-color: rgb(41, 41, 190);
-    font-size: 20px;
-    border: solid rgb(41, 41, 190) 15px;
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
 }
 
-#contacts {
-    font-family: Bahnschrift;
-    font-size: 35px;
-    border: solid rgb(73, 73, 252) 2px;
-    background-color: rgb(92, 92, 255);
+.character-card {
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 
-#adress {
-    border: solid rgb(73, 73, 252) 2px;
-    background-color: rgb(92, 92, 255);
-    font-size: 25px;
-    font-family: Cambria;
+.character-card:hover {
+    transform: rotate(-3deg) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-#phone {
-    border: solid rgb(73, 73, 252) 2px;
-    background-color: rgb(92, 92, 255);
-    font-size: 25px;
-    font-family: Cambria;
+.character-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid;
+    margin-bottom: 15px;
+}
+
+.character-card h2 {
+    color: #2d3436;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.quote p {
+    font-style: italic;
+    color: #636e72;
+    line-height: 1.4;
+}
+
+/* Индивидуальные стили для каждого дебила */
+.vova img { border-color: #e74c3c; }
+.dasha img { border-color: #9b59b6; }
+.serega img { border-color: #f1c40f; }
+.katya img { border-color: #2ecc71; }
+
+.vova:hover { background: #ffe9e8; }
+.dasha:hover { background: #f5e6ff; }
+.serega:hover { background: #fff9e6; }
+.katya:hover { background: #e6fff3; }
+
+@keyframes title {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .characters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
 }
