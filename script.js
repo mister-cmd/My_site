@@ -36,3 +36,26 @@ document.addEventListener('mousemove', (e) => {
     const y = (e.clientY / window.innerHeight - 0.5) * 30;
     hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
 });
+// Система бронирования билетов
+function bookTickets() {
+    const ticketType = document.querySelector('input[name="ticket"]:checked').value;
+    const quantity = parseInt(document.getElementById('quantity').value);
+    const prices = { basic: 500, vip: 1500 };
+    
+    const total = prices[ticketType] * quantity;
+    document.getElementById('total').textContent = `Итого: ${total}₽`;
+    
+    showAlert(`✅ Успешно! Билеты на ${total}₽ забронированы!`);
+}
+
+// Обновленная функция уведомлений
+function showAlert(message) {
+    const alert = document.getElementById('alert');
+    alert.textContent = message;
+    alert.style.bottom = '30px';
+    
+    setTimeout(() => {
+        alert.style.bottom = '-100px';
+    }, 3000);
+}
+
