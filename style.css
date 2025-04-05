@@ -1,95 +1,161 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Comic Sans MS', cursive;
+/* Базовые стили */
+:root {
+    --primary: #FFD700;
+    --secondary: #8B4513;
+    --accent: #FF69B4;
+    --dark: #2F4F4F;
 }
 
 body {
-    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-    min-height: 100vh;
-    padding: 20px;
+    font-family: 'Comic Neue', cursive;
+    background: linear-gradient(45deg, #FFF8DC, #FAEBD7);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h1 {
+/* Герой секция */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    margin: 30px 0;
-    font-size: 2.5em;
-    animation: title 2s infinite;
+    background: url('gopher-bg.jpg') center/cover;
+    position: relative;
 }
 
-.characters-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    padding: 20px;
+.hero h1 {
+    font-size: 4rem;
+    color: var(--secondary);
+    text-shadow: 3px 3px 0 var(--primary);
+    animation: float 3s ease-in-out infinite;
 }
 
-.character-card {
-    background: rgba(255,255,255,0.9);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
+/* Карточки */
+.feature-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
-.character-card:hover {
-    transform: rotate(-3deg) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.character-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid;
-    margin-bottom: 15px;
+.feature-card.secret {
+    background: repeating-linear-gradient(
+        45deg,
+        #FFD700,
+        #FFD700 10px,
+        #8B4513 10px,
+        #8B4513 20px
+    );
+    color: white;
 }
 
-.character-card h2 {
-    color: #2d3436;
-    margin-bottom: 10px;
-    font-size: 1.4em;
+/* Сувениры */
+.souvenirs {
+    padding: 4rem 2rem;
 }
 
-.quote p {
-    font-style: italic;
-    color: #636e72;
-    line-height: 1.4;
+.souvenir-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-/* Индивидуальные стили для каждого дебила */
-.vova img { border-color: #e74c3c; }
-.dasha img { border-color: #9b59b6; }
-.serega img { border-color: #f1c40f; }
-.katya img { border-color: #2ecc71; }
+.souvenir-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
 
-.vova:hover { background: #ffe9e8; }
-.dasha:hover { background: #f5e6ff; }
-.serega:hover { background: #fff9e6; }
-.katya:hover { background: #e6fff3; }
+.souvenir-item:hover {
+    transform: rotate(2deg) scale(1.05);
+}
 
-@keyframes title {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+.souvenir-item.limited::after {
+    content: "ХИТ!";
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 2rem;
+    transform: rotate(45deg);
+}
+
+/* Алерты */
+.emergency-alert {
+    position: fixed;
+    bottom: -100px;
+    right: 20px;
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+/* Анимации */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 @media (max-width: 768px) {
-    .characters-grid {
-        grid-template-columns: 1fr;
+    .hero h1 {
+        font-size: 2.5rem;
     }
     
-    h1 {
-        font-size: 1.8em;
+    .souvenir-grid {
+        grid-template-columns: 1fr;
     }
+}
+
+/* Безумные стили */
+.crazy-title {
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.crazy-title::after {
+    content: "🐹";
+    margin-left: 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.buy-button {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-button:hover {
+    background: var(--primary);
+    color: var(--dark);
+    transform: scale(1.1);
+}
+
+.gopher-emoji {
+    font-size: 1.2rem;
 }
