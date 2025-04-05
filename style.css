@@ -10,163 +10,80 @@ body {
     margin: 0;
     background: linear-gradient(45deg, #FFFDD0, #FAF0E6);
     line-height: 1.6;
+    padding: 20px;
 }
 
-.hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('bg.jpg') center/cover;
-    color: white;
-    text-align: center;
-    position: relative;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero h1 {
-    font-family: 'Comic Neue', cursive;
-    font-size: 4rem;
-    text-shadow: 3px 3px 0 var(--dark);
-    margin-bottom: 1rem;
-    animation: float 3s ease-in-out infinite;
+.card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .cta-btn {
-    padding: 1.2rem 2.5rem;
-    font-size: 1.3rem;
-    background: linear-gradient(135deg, var(--accent), var(--primary));
-    border: none;
-    border-radius: 50px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 5px 15px rgba(255,107,107,0.4);
-}
-
-.product-card {
-    background: rgba(255,255,255,0.95);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: transform 0.3s;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-.product-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px 15px 0 0;
-    aspect-ratio: 4/3; /* Фиксируем пропорции 4:3 */
-    background: #f0f0f0; /* Подложка если изображение грузится */
-}
-
-.product-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Обрезаем лишнее */
-    object-position: center top; /* Фокусируемся на верхней части */
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.product-card:hover .product-img {
-    transform: scale(1.05) rotate(0.5deg); /* Плавный зум + микроповорот */
-}
-
-.buy-btn {
     background: linear-gradient(45deg, var(--secondary), var(--dark));
     color: white;
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 15px;
+    padding: 12px 25px;
+    border-radius: 25px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    transition: all 0.3s;
+    transition: transform 0.3s;
 }
-/* Стили для билетов */
-.tickets {
-    padding: 2rem;
+
+.cta-btn:hover {
+    transform: scale(1.05);
+}
+
+.cart-section {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 0 auto;
 }
 
-.ticket-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
+.cart-items {
+    margin: 15px 0;
 }
 
-.ticket-card {
-    background: rgba(255,255,255,0.9);
-    padding: 1.5rem;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: all 0.3s;
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
 }
 
-.ticket-card:hover {
-    transform: translateY(-5px);
-}
-
-input[type="radio"]:checked + .ticket-card {
-    background: var(--primary);
-    color: white;
-}
-
-.booking-form {
-    background: rgba(255,255,255,0.8);
-    padding: 2rem;
-    border-radius: 15px;
-}
-
-.form-group {
-    margin: 1rem 0;
-}
-
-input[type="number"] {
-    padding: 0.8rem;
-    border: 2px solid var(--secondary);
-    border-radius: 10px;
-    width: 100px;
-}
-
-.total-price {
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    color: var(--dark);
+.cart-total {
+    font-size: 1.2em;
     font-weight: bold;
+    text-align: right;
+    margin: 15px 0;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cart-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.checkout {
+    background: var(--accent);
+    color: white;
 }
 
 .alert {
     position: fixed;
-    bottom: -100px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent);
+    background: var(--secondary);
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    transition: bottom 0.5s;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .product-image {
-        height: 200px;
-    }
+    padding: 15px 30px;
+    border-radius: 25px;
+    display: none;
 }
