@@ -10,6 +10,7 @@ body {
     margin: 0;
     background: linear-gradient(45deg, #FFFDD0, #FAF0E6);
     line-height: 1.6;
+    padding-bottom: 50px;
 }
 
 .hero {
@@ -21,7 +22,6 @@ body {
                 url('bg.jpg') center/cover;
     color: white;
     text-align: center;
-    position: relative;
 }
 
 .card {
@@ -64,6 +64,7 @@ body {
     border-radius: 25px;
     cursor: pointer;
     transition: transform 0.3s;
+    margin-top: 15px;
 }
 
 .buy-btn:hover {
@@ -81,6 +82,24 @@ body {
     width: 300px;
 }
 
+.cart-items {
+    margin: 15px 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-total {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 15px 0;
+    text-align: right;
+}
+
 .checkout-btn {
     background: var(--accent);
     color: white;
@@ -89,17 +108,28 @@ body {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    margin-top: 15px;
+}
+
+.clear-btn {
+    background: #ddd;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .alert {
     position: fixed;
-    bottom: 20px;
+    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--secondary);
     color: white;
     padding: 15px 30px;
     border-radius: 25px;
-    display: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: bottom 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1000;
 }
