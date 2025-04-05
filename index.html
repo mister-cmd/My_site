@@ -3,77 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GopherLand Perm - Сусличий Рай</title>
+    <title>Пермский Сусликленд</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Comic+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="hero">
-        <h1>🐹 GopherLand Perm</h1>
-        <p>Где 1000 сусликов правят балом!</p>
-        <a href="#tickets" class="cta-button">Сдаться сусликам</a>
-    </section>
+    <header class="hero">
+        <h1>🐹 Сусечная Империя</h1>
+        <p>Где 1000 сусликов правят тобой!</p>
+        <button class="cta" onclick="showAlert()">Принять власть сусликов</button>
+    </header>
 
-    <section class="features">
-        <div class="feature-card">
-            <img src="gopher-spa.jpg" alt="СПА для сусликов">
-            <h3>Сусличий СПА-салон</h3>
-            <p>Массаж лапок и чистка усов за ваши деньги</p>
-        </div>
-        
-        <div class="feature-card secret" onclick="this.classList.toggle('exploded')">
-            <img src="secret.jpg" alt="Секретный объект">
-            <h3>Бункер Хранителя Зерна</h3>
-            <p>Щелкни, чтобы активировать протокол "Жадный Хомяк"</p>
-        </div>
-    </section>
-
-    <section class="souvenirs">
-        <h2 class="crazy-title">Сувенирная лавка "Семки и Предательство"</h2>
-        
-        <div class="souvenir-grid">
-            <div class="souvenir-item">
-                <img src="gopher-mug.jpg" alt="Кружка">
-                <div class="souvenir-info">
-                    <h3>Кружка "Утренний гнев"</h3>
-                    <p>С функцией подогрева лапок</p>
-                    <div class="price">599₽ <span class="old-price">(было 1500₽)</span></div>
-                    <button class="buy-button">Купить <span class="gopher-emoji">🐹➡️🛒</span></button>
-                </div>
+    <section class="attractions">
+        <div class="card">
+            <h2>Аттракционы</h2>
+            <div class="attraction">
+                <h3>Суслотрон-5000</h3>
+                <p>Ускорение до 5 норок в секунду</p>
             </div>
-
-            <div class="souvenir-item limited">
-                <img src="gopher-hat.jpg" alt="Шапка">
-                <div class="souvenir-info">
-                    <h3>Шапка "Невидимка"</h3>
-                    <p>98% что вы потеряете её в первые 5 минут</p>
-                    <div class="price">999₽</div>
-                    <button class="buy-button">Обменять душу</button>
-                </div>
+            <div class="attraction danger">
+                <h3>Камикадзе-тоннель</h3>
+                <p>60% посетителей теряют здесь носки</p>
             </div>
         </div>
     </section>
 
-    <div class="emergency-alert">
-        🚨 ВАЖНО! Суслик №333 сбежал с вашим кошельком!
-    </div>
+    <section class="shop">
+        <h2>Сусечный Магазин</h2>
+        <div class="items-grid">
+            <div class="item">
+                <img src="souvenir1.jpg" alt="Суслик в тапочках">
+                <h3>Домашний тиран</h3>
+                <p>Тапочки с автографом главаря</p>
+                <p class="price">999₽ <span class="old-price">1999₽</span></p>
+                <button class="buy-btn">Купить за крик души</button>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        // Случайные сусличьи сообщения
-        const alerts = [
-            "⚠️ Обнаружена попытка кражи семечек!",
-            "🎉 Вы стали 1000-м посетителем! (нет)",
-            "🐹 Главарь сусликов предлагает вам сделку..."
-        ];
+    <div id="alert" class="alert"></div>
 
-        setInterval(() => {
-            const alert = document.querySelector('.emergency-alert');
-            alert.style.bottom = '20px';
-            alert.innerHTML = alerts[Math.floor(Math.random() * alerts.length)];
-            
-            setTimeout(() => {
-                alert.style.bottom = '-100px';
-            }, 3000);
-        }, 8000);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
