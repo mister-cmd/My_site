@@ -89,6 +89,60 @@ body {
     gap: 0.8rem;
     transition: all 0.3s;
 }
+/* Стили для билетов */
+.tickets {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.ticket-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.ticket-card {
+    background: rgba(255,255,255,0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+}
+
+input[type="radio"]:checked + .ticket-card {
+    background: var(--primary);
+    color: white;
+}
+
+.booking-form {
+    background: rgba(255,255,255,0.8);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.form-group {
+    margin: 1rem 0;
+}
+
+input[type="number"] {
+    padding: 0.8rem;
+    border: 2px solid var(--secondary);
+    border-radius: 10px;
+    width: 100px;
+}
+
+.total-price {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--dark);
+    font-weight: bold;
+}
 
 .alert {
     position: fixed;
