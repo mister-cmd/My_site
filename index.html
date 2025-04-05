@@ -31,25 +31,95 @@
         </div>
     </section>
 
-    <section class="shop">
-        <h2 class="section-title">Сусечный Арсенал</h2>
-        <div class="shop-grid">
-            <article class="product-card">
-                <div class="product-image">
-                    <img src="souvenir1.png" alt="Сусечный артефакт">
-                </div>
-                <div class="product-info">
-                    <h3>Коготь Власти</h3>
-                    <p>Перчатка для копания параллельных реальностей</p>
-                    <div class="price">1,999₽ <span class="old-price">3,999₽</span></div>
-                    <button class="buy-btn" onclick="addToCart(this)">
-                        <span class="cart-icon">🛒</span>
-                        Захватить власть
-                    </button>
-                </div>
-            </article>
+<section class="tickets">
+    <div class="card">
+        <h2>🎟️ Сусечные Билеты</h2>
+        <div class="ticket-options">
+            <div class="ticket-type">
+                <label>
+                    <input type="radio" name="ticket" value="basic" checked>
+                    <div class="ticket-card">
+                        <h3>Базовый</h3>
+                        <p>Вход + фото с 1 сусликом</p>
+                        <div class="price">500₽</div>
+                    </div>
+                </label>
+            </div>
+            <div class="ticket-type">
+                <label>
+                    <input type="radio" name="ticket" value="vip">
+                    <div class="ticket-card">
+                        <h3>VIP</h3>
+                        <p>Экскурсия + кормление + сувенир</p>
+                        <div class="price">1500₽</div>
+                    </div>
+                </label>
+            </div>
         </div>
-    </section>
+        <div class="booking-form">
+            <div class="form-group">
+                <label>Количество:</label>
+                <input type="number" id="quantity" min="1" value="1">
+            </div>
+            <button class="cta-btn" onclick="bookTickets()">Забронировать</button>
+            <div id="total" class="total-price"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Обновленная секция магазина -->
+<section class="shop">
+    <h2 class="section-title">Сусечный Арсенал</h2>
+    <div class="shop-grid">
+        <!-- Сувенир 1 -->
+        <article class="product-card">
+            <div class="product-image">
+                <img src="souvenir1.png" alt="Сусечный артефакт">
+            </div>
+            <div class="product-info">
+                <h3>Коготь Власти</h3>
+                <p>Перчатка для копания параллельных реальностей</p>
+                <div class="price">1,999₽ <span class="old-price">3,999₽</span></div>
+                <button class="buy-btn" onclick="addToCart(this)">
+                    <span class="cart-icon">🛒</span>
+                    Захватить власть
+                </button>
+            </div>
+        </article>
+
+        <!-- Сувенир 2 -->
+        <article class="product-card">
+            <div class="product-image">
+                <img src="souvenir2.png" alt="Сумка суслика">
+            </div>
+            <div class="product-info">
+                <h3>Сумка-Норка</h3>
+                <p>Вмещает до 5 кг семечек</p>
+                <div class="price">799₽</div>
+                <button class="buy-btn" onclick="addToCart(this)">
+                    <span class="cart-icon">🛒</span>
+                    Утащить в нору
+                </button>
+            </div>
+        </article>
+
+        <!-- Сувенир 3 -->
+        <article class="product-card">
+            <div class="product-image">
+                <img src="souvenir3.png" alt="Кружка суслика">
+            </div>
+            <div class="product-info">
+                <h3>Кружка "УтроЗверь"</h3>
+                <p>С подогревом лапок</p>
+                <div class="price">599₽</div>
+                <button class="buy-btn" onclick="addToCart(this)">
+                    <span class="cart-icon">🛒</span>
+                    Заварить мятеж
+                </button>
+            </div>
+        </article>
+    </div>
+</section>
     <div id="alert" class="alert"></div>
 
     <script src="script.js"></script>
