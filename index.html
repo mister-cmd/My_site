@@ -4,40 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Пермский Сусликленд</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Comic+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="gopher-icon.png">
 </head>
 <body>
     <header class="hero">
-        <h1>🐹 Сусечная Империя</h1>
-        <p>Где 1000 сусликов правят тобой!</p>
-        <button class="cta" onclick="showAlert()">Принять власть сусликов</button>
+        <div class="hero-content">
+            <h1>🐹 Сусечная Империя</h1>
+            <p>Где 1000 пушистых диктаторов правят балом!</p>
+            <button class="cta-btn" onclick="showAlert()">Присягнуть на верность</button>
+        </div>
     </header>
 
     <section class="attractions">
         <div class="card">
             <h2>Аттракционы</h2>
-            <div class="attraction">
-                <h3>Суслотрон-5000</h3>
-                <p>Ускорение до 5 норок в секунду</p>
+            <div class="attraction-card">
+                <h3>🌀 Вихрь Сусектора</h3>
+                <p>Спиральный тоннель длиной 300 норок</p>
             </div>
-            <div class="attraction danger">
-                <h3>Камикадзе-тоннель</h3>
-                <p>60% посетителей теряют здесь носки</p>
+            <div class="attraction-card danger">
+                <h3>☢️ Зона X</h3>
+                <p>Где теряются 97% носков посетителей</p>
             </div>
         </div>
     </section>
 
     <section class="shop">
-        <h2>Сусечный Магазин</h2>
-        <div class="items-grid">
-            <div class="item">
-                <img src="souvenir1.png" alt="Суслик в тапочках">
-                <h3>Домашний тиран</h3>
-                <p>Тапочки с автографом главаря</p>
-                <p class="price">999₽ <span class="old-price">1999₽</span></p>
-                <button class="buy-btn">Купить за крик души</button>
-            </div>
+        <h2 class="section-title">Сусечный Арсенал</h2>
+        <div class="shop-grid">
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="souvenir1.webp" alt="Сусечный артефакт">
+                </div>
+                <div class="product-info">
+                    <h3>Коготь Власти</h3>
+                    <p>Перчатка для копания параллельных реальностей</p>
+                    <div class="price">1,999₽ <span class="old-price">3,999₽</span></div>
+                    <button class="buy-btn" onclick="addToCart(this)">
+                        <span class="cart-icon">🛒</span>
+                        Захватить власть
+                    </button>
+                </div>
+            </article>
         </div>
     </section>
 
