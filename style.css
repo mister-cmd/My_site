@@ -58,15 +58,23 @@ body {
 }
 
 .product-image {
-    height: 300px;
+    position: relative;
     overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    aspect-ratio: 4/3; /* Фиксируем пропорции 4:3 */
+    background: #f0f0f0; /* Подложка если изображение грузится */
 }
 
-.product-image img {
+.product-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
+    object-fit: cover; /* Обрезаем лишнее */
+    object-position: center top; /* Фокусируемся на верхней части */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05) rotate(0.5deg); /* Плавный зум + микроповорот */
 }
 
 .buy-btn {
