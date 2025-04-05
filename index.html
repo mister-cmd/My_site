@@ -6,7 +6,6 @@
     <title>Пермский Сусликленд</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="gopher-icon.png">
 </head>
 <body>
     <header class="hero">
@@ -36,15 +35,14 @@
         <div class="shop-grid">
             <article class="product-card">
                 <div class="product-image">
-                    <img src="souvenir1.png" alt="Сусечный артефакт">
+                    <img src="souvenir1.png" alt="Перчатка суслика">
                 </div>
                 <div class="product-info">
                     <h3>Коготь Власти</h3>
                     <p>Перчатка для копания параллельных реальностей</p>
                     <div class="price">1,999₽ <span class="old-price">3,999₽</span></div>
-                    <button class="buy-btn" onclick="addToCart(this, 'product')">
-                        <span class="cart-icon">🛒</span>
-                        Захватить власть
+                    <button class="buy-btn" onclick="addToCart(this)">
+                        🛒 Захватить власть
                     </button>
                 </div>
             </article>
@@ -88,11 +86,12 @@
 
     <div class="cart-sidebar">
         <h3>🛒 Корзина</h3>
-        <div id="cart-items"></div>
+        <div id="cart-items" class="cart-items"></div>
         <div class="cart-total">
             Итого: <span id="total-price">0</span>₽
         </div>
-        <button class="checkout-btn" onclick="checkout()">Оформить</button>
+        <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+        <button class="clear-btn" onclick="clearCart()">Очистить</button>
     </div>
 
     <div id="alert" class="alert"></div>
