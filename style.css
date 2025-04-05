@@ -1,79 +1,85 @@
 :root {
-    --primary: #FFB347;
+    --primary: #FFD700;
     --secondary: #6B8E23;
     --accent: #FF6B6B;
+    --dark: #2F4F4F;
 }
 
 body {
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     background: linear-gradient(45deg, #FFFDD0, #FAF0E6);
+    line-height: 1.6;
 }
 
 .hero {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    background: url('gopher-bg.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('bg.jpg') center/cover;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-align: center;
+    position: relative;
 }
 
-.cta {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    background: var(--accent);
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Comic Neue', cursive;
+    font-size: 4rem;
+    text-shadow: 3px 3px 0 var(--dark);
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cta-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, var(--accent), var(--primary));
     border: none;
     border-radius: 50px;
+    color: white;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(255,107,107,0.4);
 }
 
-.cta:hover {
-    transform: scale(1.1) rotate(3deg);
-}
-
-.card {
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(10px);
+.product-card {
+    background: rgba(255,255,255,0.95);
     border-radius: 20px;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-}
-
-.danger {
-    position: relative;
-    border: 3px dashed var(--accent);
-}
-
-.danger::after {
-    content: "⚠️";
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    animation: blink 1s infinite;
-}
-
-.items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-
-.item {
-    background: white;
-    border-radius: 15px;
-    padding: 15px;
+    overflow: hidden;
     transition: transform 0.3s;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
 }
 
-.item:hover {
-    transform: translateY(-5px);
+.product-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.buy-btn {
+    background: linear-gradient(45deg, var(--secondary), var(--dark));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s;
 }
 
 .alert {
@@ -81,20 +87,24 @@ body {
     bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--secondary);
+    background: var(--accent);
     color: white;
-    padding: 15px 30px;
+    padding: 1rem 2rem;
     border-radius: 50px;
     transition: bottom 0.5s;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+    
+    .product-image {
+        height: 200px;
     }
 }
