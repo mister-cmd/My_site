@@ -1,19 +1,15 @@
-/* Базовые стили */
 :root {
-    --primary: #FFD700;
-    --secondary: #8B4513;
-    --accent: #FF69B4;
-    --dark: #2F4F4F;
+    --primary: #FFB347;
+    --secondary: #6B8E23;
+    --accent: #FF6B6B;
 }
 
 body {
     font-family: 'Comic Neue', cursive;
-    background: linear-gradient(45deg, #FFF8DC, #FAEBD7);
-    line-height: 1.6;
-    overflow-x: hidden;
+    margin: 0;
+    background: linear-gradient(45deg, #FFFDD0, #FAF0E6);
 }
 
-/* Герой секция */
 .hero {
     height: 100vh;
     display: flex;
@@ -22,140 +18,83 @@ body {
     justify-content: center;
     text-align: center;
     background: url('gopher-bg.jpg') center/cover;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 4rem;
-    color: var(--secondary);
-    text-shadow: 3px 3px 0 var(--primary);
-    animation: float 3s ease-in-out infinite;
-}
-
-/* Карточки */
-.feature-card {
-    background: white;
-    border-radius: 20px;
-    padding: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
-}
-
-.feature-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.feature-card.secret {
-    background: repeating-linear-gradient(
-        45deg,
-        #FFD700,
-        #FFD700 10px,
-        #8B4513 10px,
-        #8B4513 20px
-    );
     color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Сувениры */
-.souvenirs {
-    padding: 4rem 2rem;
+.cta {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background: var(--accent);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.souvenir-grid {
+.cta:hover {
+    transform: scale(1.1) rotate(3deg);
+}
+
+.card {
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.danger {
+    position: relative;
+    border: 3px dashed var(--accent);
+}
+
+.danger::after {
+    content: "⚠️";
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    animation: blink 1s infinite;
+}
+
+.items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
-.souvenir-item {
+.item {
     background: white;
     border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-    transition: 0.3s;
+    padding: 15px;
+    transition: transform 0.3s;
 }
 
-.souvenir-item:hover {
-    transform: rotate(2deg) scale(1.05);
+.item:hover {
+    transform: translateY(-5px);
 }
 
-.souvenir-item.limited::after {
-    content: "ХИТ!";
-    position: absolute;
-    top: 10px;
-    right: -30px;
-    background: var(--accent);
-    color: white;
-    padding: 0.5rem 2rem;
-    transform: rotate(45deg);
-}
-
-/* Алерты */
-.emergency-alert {
+.alert {
     position: fixed;
     bottom: -100px;
-    right: 20px;
-    background: var(--accent);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
     color: white;
-    padding: 1rem 2rem;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: 0.5s;
-    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: bottom 0.5s;
 }
 
-/* Анимации */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-    
-    .souvenir-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Безумные стили */
-.crazy-title {
-    text-align: center;
-    font-size: 2.5rem;
-    position: relative;
-}
-
-.crazy-title::after {
-    content: "🐹";
-    margin-left: 1rem;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-.buy-button {
-    background: var(--secondary);
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.buy-button:hover {
-    background: var(--primary);
-    color: var(--dark);
-    transform: scale(1.1);
-}
-
-.gopher-emoji {
-    font-size: 1.2rem;
 }
